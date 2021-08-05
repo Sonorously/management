@@ -1,0 +1,26 @@
+/*
+ 页面结构样式设置
+*/
+
+.middle-content{
+  width: 100%;
+  height: calc(100% - 90px);
+  background-color: indianred;
+
+  .aside-bar{
+    width: 200px;
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    background-color: #fff;
+    float: left;
+
+  }
+
+  .main-content{
+    width: calc(100% - 200px);
+    height: 100%;
+    margin-left: 200px;
+    overflow-y: auto;
+  }
+}
