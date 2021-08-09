@@ -1,8 +1,18 @@
 <template>
   <div id="app">
-    <router-view/>
+    <layout></layout>
+
   </div>
 </template>
+
+<script>
+import layout from '@/components/layout/index.vue'
+
+export default {
+  name: "index",
+  components:{layout}
+}
+</script>
 
 <style lang="scss">
 #app {

@@ -5,11 +5,11 @@
 
 const dynamic = [
     {
-        path: '/home',
-        name: 'home',
+        path: '/abs',
+        name: 'abs',
         component: ()=> import("@/views/public/home/Home"),
         meta: {
-            name: '首页',
+            name: '我的页面',
             icon: 'el-icon-location'
         }
     },
@@ -25,7 +25,7 @@ const dynamic = [
             {
                 path: 'about1',
                 name: 'about1',
-                component: ()=> import("@/views/public/about/about1/About"),
+                component: ()=> import("@/views/public/about/about1"),
                 meta: {
                     name: '关于1'
                 },
@@ -33,7 +33,7 @@ const dynamic = [
             {
                 path: 'about2',
                 name: 'about2',
-                component: ()=> import("@/views/public/about/about2/About"),
+                component: ()=> import("@/views/public/about/about2"),
                 meta: {
                     name: '关于2'
                 },

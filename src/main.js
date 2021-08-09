@@ -13,4 +13,6 @@ import dynamic from "@/router/dynamic";
 //dynamic获取到了页面路由配置页面，直接在此给store中的state赋值，就可以在页面中显示MENU菜单
 store.commit('SET_MENU',dynamic);
 
+
+
 createApp(App).use(ElementPlus).use(store).use(router).mount('#app')

@@ -1,12 +1,12 @@
+<!-- Menu菜单位置确定 -->
 <template>
   <div class="aside-menu">
-
 <!--    <el-radio-group v-model="isCollapse" style="margin-bottom: 20px;">
       <el-radio-button :label="false">展开</el-radio-button>
       <el-radio-button :label="true">收起</el-radio-button>
     </el-radio-group>-->
     <el-menu
-        default-active="this.$route.path"
+        default-active="$route.path"
         :collapse="isSidebarNavCollapse"
         background-color="#5e616d"
         active-text-color="#ffd04b"
@@ -31,6 +31,7 @@ export default {
   mounted() {
     console.log(this.isSidebarNavCollapse);
     console.log(this.getRouters);
+    console.log(this.$route.path);
   },
 
 }

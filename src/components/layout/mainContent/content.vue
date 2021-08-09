@@ -1,5 +1,7 @@
 <template>
-<div class="content">这个就是路由切换的页面位置</div>
+<div class="content">
+  <router-view/>
+</div>
 </template>
 
 <script>
