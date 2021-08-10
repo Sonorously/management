@@ -5,6 +5,7 @@ import HelloWorld from '../components/HelloWorld'
 import dynamic from "./dynamic";
 
 import layout from '@/components/layout/index.vue'
+import {store} from "core-js/internals/reflect-metadata";
 
 const routes = [
   {
@@ -34,7 +35,44 @@ let router = createRouter({
 })
 
 
+router.afterEach( (to,from,next)=>{
+  var routerList = to.matched;
+  console.log("1111111",to);
+  if (to.name && to.name.split('/').length > 1) {
+    console.log("1111111",to);
+    // let allListRoute = store.state.getRouters.filter(item => item.name === 'container')[0].children;children
+    // console.log("allListRoute123===",store.state.getRouters)
+    // let tempName = to.name.split('/')[0];
+    // let allChildrenRoute = [];
+    // allListRoute.forEach(item => {
+    //   if (item.children) {
+    //     allChildrenRoute = allChildrenRoute.concat(item.children);
+    //   }
+    // });
+    // allChildrenRoute = allChildrenRoute.filter(item => item);
+    // let listNameObj = allChildrenRoute.filter(item => {
+    //   return item.name === tempName;
+    // })[0];
+    // // console.log(12, listNameObj, allChildrenRoute)
+    // if (listNameObj) {
+    //   routerList = deepCopy(routerList);
+    //   let tempJson = {
+    //     name: listNameObj.name,
+    //     meta: listNameObj.meta
+    //   }
+    //   routerList.splice(1, 0, tempJson);
+    //   // console.log(routerList)
+    // }
+  }
 
+
+
+
+
+
+
+  store.commit('SET_BREAD',routerList)
+})
 
 
 
