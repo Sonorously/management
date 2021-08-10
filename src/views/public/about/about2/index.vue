@@ -1,5 +1,7 @@
 <template>
-<div><h1>这个是about2的内容，不知道为什么会出现错误</h1></div>
+<div>
+  <router-view></router-view>
+</div>
 </template>
 
 <script>

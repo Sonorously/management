@@ -1,12 +1,13 @@
 <template>
 <div>
-  <router-view></router-view>
+  <h1>404</h1>
+  <h3>页面走丢了，找不到了</h3>
 </div>
 </template>
 
 <script>
 export default {
-  name: "index",
+  name: "404",
   components: {},
   data() {
     return {}

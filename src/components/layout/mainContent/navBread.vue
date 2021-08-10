@@ -21,6 +21,5 @@ export default {
 <style scoped lang="scss">
 .nav-bread{
   height: 30px;
-  border-bottom: 1px solid #666666;
 }
 </style>
