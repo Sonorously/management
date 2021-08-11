@@ -1,18 +1,12 @@
 <template>
   <aside class="nav-bread">
     <el-breadcrumb separator="/">
-      <template v-for="(item,index) in crumbList">
-<!--        <el-breadcrumb-item
-            :key="item.name"
-            :to="{name:item.name}"
-        >
-          {{item.meta.name}}
-        </el-breadcrumb-item>-->
+      <template v-for="item in crumbList">
+        <!-- <el-breadcrumb-item :to="{name:item.name}"> -->
+        <el-breadcrumb-item>
+          {{item.name}}
+        </el-breadcrumb-item>
       </template>
-<!--      <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>-->
-<!--      <el-breadcrumb-item><a href="/">活动管理</a></el-breadcrumb-item>-->
-<!--      <el-breadcrumb-item>活动列表</el-breadcrumb-item>-->
-<!--      <el-breadcrumb-item>活动详情</el-breadcrumb-item>-->
     </el-breadcrumb>
   </aside>
 
@@ -24,6 +18,9 @@ export default {
   name: "navBread",
   computed:{
     ...mapState(['crumbList'])
+  },
+  mounted() {
+    console.log("这个值是什么",this.crumbList);
   }
 }
 </script>
@@ -31,5 +28,8 @@ export default {
 <style scoped lang="scss">
 .nav-bread{
   height: 30px;
+}
+/deep/.el-breadcrumb__inner.is-link{
+  font-weight: unset!important;
 }
 </style>
