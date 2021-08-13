@@ -4,7 +4,7 @@
     <myHead/>
     <!--  中间菜单和内容展示区域  -->
     <div class="middle-content">
-      <asideBar class="aside-bar"/>
+      <asideBar :class=" isSidebarNavCollapse ? 'aside-bar-close' : 'aside-bar'  "/>
       <mainContent/>
     </div>
     <!--  尾部信息标题  -->
@@ -17,9 +17,14 @@ import myHead from "./myHead";
 import myFooter from "./myFooter";
 import asideBar from "./asideBar";
 import mainContent from "./mainContent/index"
+
+import {mapState} from 'vuex'
 export default {
   name: "index",
-  components:{myHead,myFooter,asideBar,mainContent}
+  components:{myHead,myFooter,asideBar,mainContent},
+  computed:{
+    ...mapState(['isSidebarNavCollapse'])
+  }
 }
 </script>
 

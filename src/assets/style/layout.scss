@@ -6,7 +6,7 @@
   width: 100%;
   height: calc(100% - 90px);
   background-color: #f3f3f3;
-
+  //menu菜单面板展开的情况
   .aside-bar{
     width: 200px;
     height: 100%;
@@ -14,13 +14,28 @@
     overflow-x: hidden;
     background-color: #fff;
     float: left;
-
   }
-
+  //menu菜单面板收缩的情况
+  .aside-bar-close{
+    width: 60px;
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    background-color: #fff;
+    float: left;
+  }
+  //内容展示区域在菜单面板展开的情况下的宽度
   .main-content{
     width: calc(100% - 200px);
     height: 100%;
     margin-left: 200px;
+    overflow-y: auto;
+  }
+  //内容展示区域在菜单面板关闭的情况下的宽度
+  .main-content-close{
+    width: calc(100% - 60px);
+    height: 100%;
+    margin-left: 60px;
     overflow-y: auto;
   }
 }

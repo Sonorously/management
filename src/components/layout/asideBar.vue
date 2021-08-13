@@ -5,7 +5,6 @@
         default-active="$route.path"
         :collapse="isSidebarNavCollapse"
         background-color="#ffffff"
-        active-text-color="#fefefe"
         text-color="#5e616d"
         router
     >
@@ -36,7 +35,10 @@ export default {
 <style scoped lang="scss">
 .aside-menu{
 
-  //overflow-y: auto;
+  //el-menu生成的ul>li标签，ul自带一个右边框，在此去掉ul自带的右边框
+  /deep/.el-menu {
+    border-right: 0;
+  }
 }
 
 </style>

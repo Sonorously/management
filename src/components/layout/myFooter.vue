@@ -11,7 +11,7 @@ export default {
 <style scoped lang="scss">
   .my-footer{
     width: 100%;
-    background-color: lightblue;
+    background-color: #2d2e36;
     height: 30px;
     line-height: 30px;
     text-align: center;

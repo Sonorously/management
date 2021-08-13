@@ -1,6 +1,6 @@
 <template>
   <div class="my-head">
-    <h1>这个是头部信息</h1>
+    <h1>BINGO的世界</h1>
   </div>
 </template>
 
@@ -15,7 +15,11 @@ export default {
     width: 100%;
     height: 60px;
     padding: 10px;
-    background-color: green;
+    background-color: #1c2938;
+    line-height: 40px;
+    text-align: center;
+    color:#ffffff;
+
 
   }
 </style>

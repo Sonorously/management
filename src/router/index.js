@@ -1,7 +1,5 @@
 import { createRouter, createWebHashHistory} from 'vue-router'
 
-
-import HelloWorld from '../components/HelloWorld'
 import dynamic from "./dynamic";
 
 import layout from '@/components/layout/index.vue'
@@ -21,11 +19,10 @@ const routes = [
       ...dynamic
     ]
   },
-
-  // {
-  //   path: '*',
-  //   component: () => import("../components/public/404"),
-  // }
+  {
+    path: '/404',
+    component: () => import("@/components/public/404"),
+  }
 ]
 
 
@@ -34,15 +31,25 @@ let router = createRouter({
   routes
 })
 
+// router.beforeEach((to,from,next) => {
+//   console.log(to);
+//   console.log(from);
+//   console.log(next);
+//
+// })
 
-router.afterEach( (to,from,next)=>{
+router.afterEach( (to,from,next) =>{
+
+  //当前功能是给面面包屑赋值
   let routerList = to.matched;
   let getBreadRoute = routerList.slice(1);//在不改变原数组的情况下拷贝数组
   let breadList = [];
   getBreadRoute.forEach( item => {
     breadList.push(item.meta)
   })
-  store.commit('SET_BREAD',breadList)
+  store.commit('SET_BREAD',breadList);
+
+
 })
 
 

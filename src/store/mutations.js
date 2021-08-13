@@ -10,5 +10,8 @@ export default {
     //用来对面包屑进行赋值
     SET_BREAD(state,list){
         state.crumbList = list
+    },
+    targetNENU(state){
+        state.isSidebarNavCollapse = !state.isSidebarNavCollapse;
     }
 }
