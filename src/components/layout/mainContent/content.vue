@@ -14,5 +14,8 @@ export default {
 .content{
   height: calc(100% - 30px);
   background-color: #fff;
+  >div{
+    height: 100%;
+  }
 }
 </style>

@@ -1,7 +1,7 @@
 <!-- 3D -->
 <template>
   <div class="main">
-    3D
+    <div id="container"></div>
   </div>
 </template>
 
