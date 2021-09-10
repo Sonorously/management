@@ -31,12 +31,12 @@ let router = createRouter({
   routes
 })
 
-// router.beforeEach((to,from,next) => {
-//   console.log(to);
-//   console.log(from);
-//   console.log(next);
-//
-// })
+/*router.beforeEach((to,from,next) => {
+  console.log("beforeEach-to",to);
+  console.log("beforeEach-from",from);
+  console.log("beforeEach-next",next);
+
+})*/
 
 router.afterEach( (to,from,next) =>{
 

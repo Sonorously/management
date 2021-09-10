@@ -40,7 +40,7 @@ const dynamic = [
                 component: () => import("@/views/public/element/form"),
                 meta: {
                     name: '表单'
-                },
+                }
             },
             {
                 path: '/tree',
@@ -122,9 +122,9 @@ const dynamic = [
             {
                 path: '/dialog',
                 name: 'dialog',
-                component:() => import("../views/public/demand/dialog"),
+                component:() => import("../views/public/demand/slot"),
                 meta:{
-                    name: "对话框"
+                    name: "插槽"
                 }
             },
             {
