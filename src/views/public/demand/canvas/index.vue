@@ -1,15 +1,6 @@
 <!--画板-->
 <template>
-  <div class="wrapper">
-    <canvas id="board" ref="board" class="board" width="600px" height="300px"></canvas>
-    <div class="btn">
-      <input type="color" class="color" id="color">
-      <input type="button" value="清屏" class="clear" id="clear">
-      <input type="button" value="撤销" class="reset" id="reset">
-      <input type="button" value="橡皮" class="eraser" id="eraser">
-      <input type="range" class="range" min="2" max="20" value="5" id="range">
-    </div>
-  </div>
+
 </template>
 
 <script>
@@ -25,117 +16,16 @@ export default {
   },
   mounted() {
     window.onload = ()=>{
-      this.draw();
+
     }
 
   },
   methods: {
-    draw(){
-      var board = document.getElementById("board");
-      var ctx = board.getContext("2d");
-      var bool = false;
-      var left = board.offsetLeft; //获取画布的left值
-      var top = board.offsetTop; //获取画布的top值
-      var canvasW = board.offsetWidth; //获取画布的宽度
-      var canvasH = board.offsetHeight; //获取画布的高度
-      var img = []; //用于存放画布图片截图的数组
 
-      // draw();
-      ctx.lineCap = "round"; //设置线条的结束端点样式
-      ctx.lineJion = "round"; //设置两条线相交时，所创建的拐角类型
-      board.onmousedown = (e) => {
-        bool = true;
-        ctx.beginPath(); //起始/重置一条路径
-        ctx.moveTo(e.clientX - left, e.clientY - top); //把路径移动到画布中的指定点，不创建线条
-        let pic = ctx.getImageData(0, 0, canvasW, canvasH); //获取当前画布的图像
-        img.push(pic); //将当前图像存入数组
-        // ctx.moveTo(e.clientX, e.clientY);
-      };
-      board.onmousemove = (e) => {
-        if (bool) {
-          console.log("e.clientX=",e.clientX);
-          console.log("e.clientY=",e.clientY);
-
-          // ctx.lineTo(e.clientX, e.clientY);
-          ctx.lineTo(e.clientX - 10, e.clientY - 10); //添加一个新点，在画布中创建从该点到最后指定点的线条
-          ctx.strokeStyle="red";
-          ctx.stroke();
-        }
-      };
-      board.onmouseout = (e) => {
-        ctx.closePath(); //当鼠标移出画布区域时,创建从当前点回到起始点的路径
-        bool = false;
-      };
-      board.onmouseup = (e) => {
-        ctx.closePath(); //当鼠标抬起时,创建从当前点回到起始点的路径
-        bool = false;
-      };
-    },
   }
 }
 </script>
 
 <style scoped lang='scss'>
-.wrapper {
-  width: 100%;
-  height: 100%;
-  overflow-x: hidden;
-  background-size: 100% 100%;
-}
-.wrapper .board {
-  width: 600px;
-  height: 300px;
-  border: 2px solid yellowgreen;
-  border-radius: 10px;
-  box-shadow: 2px 0px 5px #666;
-  margin: 10px 0 0 10px;
-  cursor: pointer;
-}
-.wrapper .btn {
-  width: 610px;
-  height: 35px;
-  margin: 10px 0 0px 10px;
-  position: relative;
-}
-.wrapper .btn input {
-  border: none;
-  outline: none;
-  width: 100px;
-  height: 35px;
-  vertical-align: middle;
-  margin-right: 10px;
-  border-radius: 10px;
-  background-color: chartreuse;
-}
-/* input type = color时，设置拾色器的外层包括的边框带样式*/
-.wrapper .btn input[type="color"]::-webkit-color-swatch-wrapper {
-  padding: 0px;
-}
-/* input type = color 设置拾色器内层边框样式*/
-.wrapper .btn input[type="color"]::-webkit-color-swatch {
-  border: 3px solid chartreuse;
-  border-radius: 10px;
-}
-.wrapper .btn input[type="range"] {
-  padding: 0 5px;
-  /* 消除默认样式 */
-  -webkit-appearance: none;
-  background-color: chartreuse;
-}
-/* 设置 活动轨道的样式*/
-.wrapper .btn input[type="range"]::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  width: 10px;
-  height: 10px;
-  background-color: #fff;
-  border-radius: 50%;
-  margin-top: -4px;
-}
-/* 设置滑动小圆点的样式 */
-.wrapper .btn input[type="range"]::-webkit-slider-runnable-track {
-  width: 90px;
-  height: 2px;
-  background-color: #666;
-}
 
 </style>
